@@ -33,7 +33,7 @@
               class="capitalize flex font-semibold hidden lg:block my-2 space-x-3 text-center text-sm"
             >
               <a
-                href="signin.html"
+                href="/signin"
                 class="bg-pink-500 pink-500 px-6 py-3 rounded-md shadow text-white"
                 >Login</a
               >
@@ -50,6 +50,18 @@
         >
           <h1 class="lg:text-3xl text-xl font-semibold mb-6">Sign Up</h1>
           <!--<p class="mb-2 text-black text-lg"> Register to manage your account </p>-->
+
+          <div>
+            <style>
+              h5 {
+                color: red;
+              }
+            </style>
+            {% for message in messages %}
+            <h5>{{message}}</h5>
+            {% endfor %}
+          </div>
+
           <form action="" method="POST">
             {% csrf_token %}
             <!--<div class="flex lg:flex-row flex-col lg:space-x-2">
@@ -101,7 +113,7 @@
             </button>
             <div class="text-center mt-5 space-x-2">
               <p class="text-base">
-                Do you have an account? <a href="form-login.html"> Login </a>
+                Do you have an account? <a href="/signin"> Login </a>
               </p>
             </div>
           </form>
