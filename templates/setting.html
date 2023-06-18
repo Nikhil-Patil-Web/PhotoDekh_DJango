@@ -38,13 +38,13 @@
                 <br>
                 <hr>
 
-                <form class="grid lg:grid-cols-3 mt-12 gap-8">
+                <div class="grid lg:grid-cols-3 mt-12 gap-8">
                     <div>
                         <h3 class="text-xl mb-2"> Basic</h3>
                         <p></p>
                     </div>
                     <div class="bg-white rounded-md lg:shadow-lg shadow col-span-2">
-                        <form action="" method="POST"></form>
+                        <form action="" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                        <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
                            <!-- <div>
@@ -95,9 +95,9 @@
                            <button class="p-2 px-4 rounded bg-gray-50 text-red-500"> <a href="/">Cancel</a> </button>
                            <button type="submit" class="button bg-blue-700"> Save </button>
 
-                        
+                        </form>
                        </div>
-                    </form>
+                    </div>
                     </div>
                 
                 
