@@ -62,7 +62,7 @@
     
                             <!-- notification contents -->
 
-                            <form>
+                        
 
 
                             <div class="flex justify-center flex-center text-center">
@@ -75,17 +75,23 @@
                                             <path d="M9 13h2v5a1 1 0 11-2 0v-5z" />
                                         </svg>
                                     </div>
+                                    <form action="upload" method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <p class="my-3 leading-6"> Upload Pics
+                                        </p>
+                                        <div>
+                                            <input type="file" name="image_upload">
+                                            <!-- <a href="#" class="button soft-warning small"> Choose file</a> -->
+                                            <textarea class="button soft-warning small" name="caption" placeholder="Caption....."></textarea>
+                                            <br>
+                                            <button class="bg-blue-700 button" type="submit" >Upload</button>
+                                        </div>
+                                </form>
 
-                                    <p class="my-3 leading-6"> Upload Pics
-                                    </p>
-                                    <div>
-                                        <input type="file">
-                                        <a href="#" class="button soft-warning small"> Choose file</a>
-                                    </div>
     
-                                    <a href="#" class="uk-text-muted mt-3 uk-link"
+                                    <!-- <a href="#" class="uk-text-muted mt-3 uk-link"
                                         uk-toggle="target: .choose-upload ;  animation: uk-animation-slide-right-small, uk-animation-slide-left-medium; queued: true">
-                                        Or Import Video </a>
+                                        Or Import Video </a> -->
                                 </div>
     
                                 <div class="uk-flex uk-flex-column choose-upload" hidden>
@@ -108,7 +114,7 @@
                                 </div>
     
                             </div>
-                        </form>
+                       
                             <div class="px-4 py-3 -mx-5 -mb-4 mt-5 border-t text-sm">
                                 Your Image Size Must be Maxmium 999MB
                             </div>
