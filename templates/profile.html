@@ -24,7 +24,8 @@
         <figure>
           <img src="{% static 'images/resources/timeline-1.jpg' %}" alt="" />
         </figure>
-        <form>
+        <form action="/follow" method="POST">
+          {% csrf_token %}
           <div class="add-btn">
             <span style="color: white; font-size: 27px; margin-right: 520px"
               ><b
@@ -47,8 +48,14 @@
             <span style="color: white; font-size: 27px"
               ><b>3.5k following</b></span
             >
-            <a href="" title="" data-ripple=""
-              ><button style="background-color: #ffc0cb; border: #ffc0cb">
+            <input type="hidden" value="{{user.username}}" name="follower" />
+            <input type="hidden" value="{{user_object.username}}" name="user" />
+
+            <a data-ripple=""
+              ><button
+                style="background-color: #ffc0cb; border: #ffc0cb"
+                type="submit"
+              >
                 Follow
               </button></a
             >
@@ -177,7 +184,7 @@
       data-cfasync="false"
       src="{% static '../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"
     ></script>
-    <script src="js/main.min.js"></script>
+    <script src="{%static 'js/main.min.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>
