@@ -10,5 +10,6 @@ urlpatterns = [
     path('signin', views.signin, name ='signin'),
     path('like-post', views.like_post, name='like-post'),
     path('logout', views.logout, name ='logout'),
+    path('search', views.search, name='search'),
     path('settings', views.settings, name='settings')
 ];
