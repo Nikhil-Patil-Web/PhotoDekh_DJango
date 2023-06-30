@@ -13,3 +13,5 @@ urlpatterns = [
     path('search', views.search, name='search'),
     path('settings', views.settings, name='settings')
 ];
+
+
